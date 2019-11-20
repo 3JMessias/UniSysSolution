@@ -7,8 +7,7 @@
         Dim sql As New StringBuilder
 
         With sql
-            .Append("insert into Cliente")
-            .Append("(")
+            .Append("insert into Cliente(")
             .Append("nomeCliente,")
             .Append("cpf,")
             .Append("idade,")
@@ -24,7 +23,6 @@
             .Append("'" & cliente.Telefone & "'")
             .Append(")")
         End With
-
         Return cn.ExecutaSqlNew(sql.ToString)
 
     End Function
