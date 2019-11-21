@@ -91,6 +91,8 @@
         Dim desconto As Double = txtDesconto.Text
         Dim total As String = preco * quant - desconto
 
+
+
         txtTotal.Text = total
     End Sub
 
@@ -99,8 +101,30 @@
         Dim produto As New ProdutoTO
         Dim dao As New ProdutoDAO
         dao.PreecheObj(produto, idProduto)
+
         txtPreco.Text = produto.Preco
         CalcTotal()
 
     End Sub
+
+    Protected Sub txtQuant_TextChanged(sender As Object, e As EventArgs) Handles txtQuant.TextChanged
+        CalcTotal()
+    End Sub
+
+    Protected Sub txtDesconto_TextChanged(sender As Object, e As EventArgs) Handles txtDesconto.TextChanged
+        CalcTotal()
+    End Sub
+
+    Protected Sub grdItemVenda_SelectedIndexChanged(sender As Object, e As EventArgs) Handles grdItemVenda.SelectedIndexChanged
+
+    End Sub
+
+    Protected Sub btnRemover_Click(sender As Object, e As EventArgs) Handles btnRemover.Click
+        Dim idItemVenda As Long = grdItemVenda.SelectedValue
+        Dim dao As ItemVendaDAO
+
+        dao.Exclui(idItemVenda)
+        RefreshGrid()
+    End Sub
+
 End Class

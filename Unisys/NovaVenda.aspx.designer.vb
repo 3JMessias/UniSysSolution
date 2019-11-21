@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class NovaVenda
-
+    
     '''<summary>
     '''form2 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class NovaVenda
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form2 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''Label2 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class NovaVenda
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Label3 control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class NovaVenda
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''btnSalvar control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class NovaVenda
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnSalvar As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''cboCliente control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class NovaVenda
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cboCliente As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''cboVendedor control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class NovaVenda
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cboVendedor As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''btnCancelar control.
     '''</summary>
@@ -75,52 +75,7 @@ Partial Public Class NovaVenda
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnCancelar As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''cboProduto control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents cboProduto As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''txtQuant control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtQuant As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''txtPreco control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtPreco As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''txtDesconto control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtDesconto As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''txtTotal control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtTotal As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btnInserir control.
     '''</summary>
@@ -129,7 +84,61 @@ Partial Public Class NovaVenda
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnInserir As Global.System.Web.UI.WebControls.Button
-
+    
+    '''<summary>
+    '''cboProduto control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cboProduto As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''txtQuant control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtQuant As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''txtPreco control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtPreco As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''txtDesconto control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDesconto As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''txtTotal control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtTotal As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''btnRemover control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnRemover As Global.System.Web.UI.WebControls.Button
+    
     '''<summary>
     '''grdItemVenda control.
     '''</summary>
@@ -138,7 +147,7 @@ Partial Public Class NovaVenda
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents grdItemVenda As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''Button1 control.
     '''</summary>

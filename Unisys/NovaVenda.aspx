@@ -20,6 +20,11 @@
             width: 80px;
         }
     </style>
+    <script type="text/javascript">
+        function ConfirmaExclusao() {
+            return confirm("Produto selecionado na grid será excluido!");
+        }
+    </script>
 </head>
 <body>
     <form id="form2" runat="server">
@@ -58,7 +63,10 @@
 
     <table border=1>
         <tr><td>Nome do Produto</td><td class="style3">Quant.</td><td>Preço</td><td>Desc.</td><td>
-            Total</td><td>&nbsp;</td></tr>
+            Total</td><td>
+                <asp:Button ID="btnInserir" runat="server" Text="+" Height="26px" 
+                    Width="53px" Font-Bold="True" Font-Size="15pt" />
+            </td></tr>
         <tr> <td>
             <asp:DropDownList ID="cboProduto" runat="server" AutoPostBack="True" 
                 AppendDataBoundItems="True">
@@ -73,8 +81,8 @@
             </td> <td>
                 <asp:TextBox ID="txtTotal" runat="server" Width="76px" ReadOnly="True">0,00</asp:TextBox>
             </td> <td>
-                <asp:Button ID="btnInserir" runat="server" Text="Inserir" Height="26px" 
-                    Width="53px" />
+                <asp:Button ID="btnRemover" runat="server" Text="-" Height="26px" 
+                    Width="53px" Font-Bold="True" Font-Size="15pt" ForeColor="Red" OnClientClick="ConfirmaExclusao()"/>
             </td> </tr>
 
     
@@ -93,13 +101,13 @@
                 DataFormatString="{0:c}" />
             <asp:BoundField DataField="Total" HeaderText="Total" DataFormatString="{0:c}" />
             <asp:BoundField DataField="idVenda" HeaderText="idVenda" Visible="False" />
-            <asp:CommandField ButtonType="Image" SelectImageUrl="~/Imagens/btnExcluir.jpg" 
+            <asp:CommandField 
                 ShowSelectButton="True" />
         </Columns>
     </asp:GridView>
 
     <asp:Button ID="Button1" runat="server" Text="Button" />
-
+        
     </form>
  
 </body>
