@@ -59,7 +59,9 @@
 
     Public Function PreecheCombo() As DataSet Implements iDAO(Of ProdutoTO).PreecheCombo
         Dim retorno As New DataSet
-
+        Dim cn As New Conexao
+        Dim sql As String = "Select idProduto, nomeProduto, preco, estoque, foraDeLinha from Produtos order by nomeProduto"
+        retorno = cn.ExecutaSqlRetorno(sql)
         Return retorno
     End Function
 

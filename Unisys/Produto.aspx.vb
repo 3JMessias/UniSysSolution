@@ -22,8 +22,8 @@
             grdVendas.DataSource = dao.Lista(txtPesquisar.Text)
         Else
             Dim idCategoria As Integer = cboCategoria.SelectedValue
-            Dim precoMin As Double = txtPrecoMin.Text
-            Dim precoMax As Double = txtPrecoMax.Text
+            Dim precoMin As Double = IIf(txtPrecoMin.Text, txtPrecoMin.Text, 0)
+            Dim precoMax As Double = IIf(txtPrecoMax.Text, txtPrecoMax.Text, 0)
             grdVendas.DataSource = dao.FiltroMultiplo(idCategoria, precoMin, precoMax)
         End If
 

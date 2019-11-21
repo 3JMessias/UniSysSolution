@@ -171,6 +171,8 @@
     <Compile Include="ProdutoTO.vb" />
     <Compile Include="VendaDAO.vb" />
     <Compile Include="VendaTO.vb" />
+    <Compile Include="VendedorDAO.vb" />
+    <Compile Include="VendedorTO.vb" />
     <Compile Include="WebForm1.aspx.designer.vb">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>

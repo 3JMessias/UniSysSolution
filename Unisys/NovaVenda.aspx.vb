@@ -4,7 +4,7 @@
     Private Shared idVenda As Long 'Id da Venda 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If Not IsPostBack Then
+        If Not IsPostBack Then 'Se 
             CarregaCboCliente()
             CarregaCboVendedor()
             CarregaCboProduto()
@@ -28,11 +28,9 @@
     End Sub
     Sub CarregaCboVendedor()
 
-        Dim cn As New Conexao
-        Dim sql As String = "select idVendedor, nomeVendedor " &
-                            "from Vendedores order by nomeVendedor"
+        Dim dao As New VendedorDAO
         With cboVendedor
-            .DataSource = cn.ExecutaSqlRetorno(sql)
+            .DataSource = dao.PreecheCombo
             .DataValueField = "idVendedor"
             .DataTextField = "nomeVendedor"
             .DataBind()
@@ -42,25 +40,35 @@
 
     Sub CarregaCboCliente()
 
-        Dim cn As New Conexao
-        Dim sql As String = "select idCliente,nomeCliente from Clientes order by nomeCliente"
-
-        cboCliente.DataSource = cn.ExecutaSqlRetorno(sql)
-        cboCliente.DataValueField = "idCliente"
-        cboCliente.DataTextField = "nomeCliente"
-        cboCliente.DataBind()
+        Dim dao As New ClienteDAO
+        With cboCliente
+            .DataSource = dao.PreecheCombo
+            .DataValueField = "idCliente"
+            .DataTextField = "nomeCliente"
+            .DataBind()
+        End With
 
     End Sub
 
     Sub CarregaCboProduto()
         Dim dao As New ProdutoDAO
-        cboProduto.DataSource = dao.PreecheCombo
-        cboProduto.DataValueField = "idProduto"
-        cboProduto.DataTextField = "NomeProduto"
-        cboProduto.DataBind()
+        Try
+            With cboProduto
+                .DataSource = dao.PreecheCombo
+                .DataValueField = "idProduto"
+                .DataTextField = "NomeProduto"
+                .DataBind()
+            End With
+        Catch ex As Exception
+            MsgBox(ex)
+        End Try
     End Sub
 
     Protected Sub btnInserir_Click(sender As Object, e As EventArgs) Handles btnInserir.Click
+        AdicionaItem()
+        RefreshGrid()
+    End Sub
+    Sub AdicionaItem()
         Dim item As New ItemVendaTO
         With item
             .idVenda = idVenda
@@ -71,8 +79,28 @@
         End With
         Dim dao As New ItemVendaDAO
         dao.Adiciona(item)
-
+    End Sub
+    Sub RefreshGrid()
+        Dim dao As New ItemVendaDAO
         grdItemVenda.DataSource = dao.PreencheGrid(idVenda)
         grdItemVenda.DataBind()
+    End Sub
+    Sub CalcTotal()
+        Dim quant As Integer = txtQuant.Text
+        Dim preco As Double = txtPreco.Text '.Replace(",", ".")
+        Dim desconto As Double = txtDesconto.Text
+        Dim total As String = preco * quant - desconto
+
+        txtTotal.Text = total
+    End Sub
+
+    Protected Sub cboProduto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboProduto.SelectedIndexChanged
+        Dim idProduto As Long = cboProduto.SelectedValue
+        Dim produto As New ProdutoTO
+        Dim dao As New ProdutoDAO
+        dao.PreecheObj(produto, idProduto)
+        txtPreco.Text = produto.Preco
+        CalcTotal()
+
     End Sub
 End Class

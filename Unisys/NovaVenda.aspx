@@ -58,7 +58,7 @@
 
     <table border=1>
         <tr><td>Nome do Produto</td><td class="style3">Quant.</td><td>Preço</td><td>Desc.</td><td>
-            Total</td><td>&nbsp;</td></td></tr>
+            Total</td><td>&nbsp;</td></tr>
         <tr> <td>
             <asp:DropDownList ID="cboProduto" runat="server" AutoPostBack="True" 
                 AppendDataBoundItems="True">

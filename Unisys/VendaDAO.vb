@@ -11,7 +11,7 @@
         sql.Append(Obj.IdCliente & ",")
         sql.Append(Obj.IdVendedor & ",")
         sql.Append("getDate() )")
-        sql.Append("SELECT @@identity")
+        sql.Append("SELECT @@identity") 'Retorna o id gerado
 
         Dim cn As New Conexao
         Dim msg As String
